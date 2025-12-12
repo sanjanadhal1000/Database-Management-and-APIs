@@ -1,0 +1,32 @@
+==========================
+Ensemble Learning Basics
+==========================
+
+- Ensemble Learning  is a technique where multiple weak models are combined to create a stronger, more accurate model.
+- It works on the principle:
+    "Many weak learners together outperform a single strong learner."
+
+- Two types of ensemble learning:
+    ==================================
+    - Bagging (Bootstrap Aggregating)
+    ==================================
+        > Each model is trained independently.
+        > Trained on random subsets of the data (sampling with replacement).
+        > Reduces variance.
+        > Ex: Random Forest
+
+    ===========
+    - Boosting
+    ===========
+        > Models are trained sequentially.
+        > Each new model corrects the errors of the previous model.
+        > Reduces bias.
+        > Ex: XGBoost, AdaBoost, Gradient Boosting
+
+===================================
+- Advantages of Ensemble Learning:
+===================================
+    > Higher Accuracy.
+    > More Stable Predictions.
+    > Better Generalization to Unseen Data.
+    > Handles Nonlinear Relationships effectively.

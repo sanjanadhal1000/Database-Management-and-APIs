@@ -1,0 +1,38 @@
+======================================
+EDA (Exploratory Data Analysis) Steps
+======================================
+- Follow these standard steps before modeling:
+
+    ================
+    - Basic Checks:
+    ================
+        > Check shape, columns, data types.
+        > Look for missing values.
+        > Generate statistical summary (mean,std,min-max).
+
+    ======================
+    - Univariate Analysis:
+    ======================
+        > Plot histogram of numerical columns.
+        > Check distributions.
+        > Detect Outliers.
+
+    =====================
+    - Bivariate Analysis:
+    =====================
+        > Scatter plots.
+        > Box plots.
+        > Group-by comparisons.
+
+    ============================
+    - Target Variable Analysis:
+    ============================
+        > Countplot of the target (class distribution).
+        > Identify imbalance if any.
+
+    ========================
+    - Correlation Analysis:
+    ========================
+        > Correlation matrix.
+        > Heatmap to visualize relationships.
+        > Identify multicollinearity.

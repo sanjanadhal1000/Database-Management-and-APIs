@@ -1,0 +1,48 @@
+=====================
+Random Forest Theory
+=====================
+
+- Ensemble method using multiple decision trees.
+- Used Bagging + Feature Randomness to create diversified trees.
+
+================
+- How It Works?
+================
+    > A bootstrap sample of the data is selected (random rows with replacement).
+    > A decision tree is trained on that sample.
+    > At each split in the tree, only a random subset of features is considered.
+    > Many such trees are created independently.
+    > Final prediction:
+        - Classification: Majority vote
+        - Regression: Average prediction
+
+============================
+- Benefits of Random Forest
+============================
+    > Reduces overfitting of Decision Trees.
+    > Works well with high-dimensional data.
+    > Handles missing values fairly well.
+    > Provides feature importance scores.
+    > Stable and robust model.
+
+===============
+- Key Concepts
+===============
+    ===============================
+    - OOB Score (Out-Of-Bag Score)
+    ===============================
+        > Used as a built-in validation technique.
+
+    =====================   
+    - Feature Importance
+    =====================
+        > Shows which features contributed the most to predictions.
+
+    ==================
+    - Hyperparameters
+    ==================
+        > n_estimators (number of trees)
+        > max_depth
+        > max_features
+        > min_samples_split
+        > min_samples_leaf
