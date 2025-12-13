@@ -1,0 +1,52 @@
+DAY 3 – GRADIENT BOOSTING & XGBOOST
+----------------------------------
+
+1. Gradient Boosting
+Gradient Boosting is an ensemble technique where models are trained
+sequentially. Each new model tries to correct the errors made by the
+previous model.
+
+Unlike Bagging:
+- Models depend on each other
+- Focuses on reducing bias
+
+2. How Gradient Boosting Works
+• First model makes predictions
+• Errors are calculated
+• Next model focuses more on misclassified samples
+• Process repeats
+• Final prediction is weighted sum of all models
+
+3. XGBoost (Extreme Gradient Boosting)
+XGBoost is an optimized and faster version of Gradient Boosting.
+
+Advantages:
+✓ High performance
+✓ Handles missing values
+✓ Built-in regularization
+✓ Prevents overfitting
+✓ Parallel processing
+
+4. Important XGBoost Parameters
+n_estimators  → number of trees
+learning_rate → contribution of each tree
+max_depth     → tree complexity
+eval_metric   → evaluation metric
+
+5. Random Forest vs XGBoost
+
+Random Forest:
+✓ Bagging-based
+✓ Trees trained independently
+✓ Reduces variance
+✓ Easier to tune
+
+XGBoost:
+✓ Boosting-based
+✓ Trees trained sequentially
+✓ Reduces bias
+✓ Often higher accuracy
+
+6. When to use:
+• Random Forest → baseline, stable performance
+• XGBoost → competitions, complex datasets
