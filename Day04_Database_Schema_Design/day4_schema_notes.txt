@@ -1,0 +1,74 @@
+DAY 4 – PROJECT UNDERSTANDING & SCHEMA DESIGN
+Weather Data Pipeline System
+
+1. PROJECT OVERVIEW
+The Weather Data Pipeline is an end-to-end data engineering system that:
+- Extracts real-time weather data from OpenWeatherMap API
+- Transforms and cleans the data
+- Loads it into a relational SQLite database
+- Supports historical analysis, reporting, and alerts
+
+2. DATABASE DESIGN GOALS
+- Store structured and historical weather data
+- Avoid data redundancy using normalization
+- Support analytical queries (average temperature, trends)
+- Track pipeline execution and failures
+
+3. TABLE DESCRIPTIONS
+
+A. cities
+Purpose:
+Stores static information about cities being tracked.
+
+Columns:
+- city_id: Primary key, unique city identifier
+- city_name: Name of the city
+- country: Country name or code
+- latitude, longitude: Geographic coordinates
+- created_at: Timestamp when city was added
+
+Why separate table?
+- Avoid repeating city details for every weather record
+- Enables normalization (3NF)
+
+B. weather_data
+Purpose:
+Stores time-series weather observations.
+
+Columns:
+- record_id: Primary key
+- city_id: Foreign key linking to cities table
+- timestamp: Date and time of weather observation
+- temperature_c: Temperature in Celsius
+- humidity: Humidity percentage
+- pressure_hpa: Atmospheric pressure
+- wind_speed_mps: Wind speed in meters per second
+- weather_condition: Text description (clear, cloudy, rain)
+
+Relationship:
+- Many weather records belong to one city
+- One-to-many relationship between cities and weather_data
+
+C. pipeline_logs
+Purpose:
+Tracks ETL pipeline execution status for monitoring and debugging.
+
+Columns:
+- log_id: Primary key
+- run_time: When pipeline ran
+- status: SUCCESS / FAILED
+- message: Error or success message
+
+4. NORMALIZATION
+- 1NF: Atomic columns, no repeating groups
+- 2NF: No partial dependency (weather depends on city_id)
+- 3NF: City details stored separately from weather data
+
+5. ER RELATIONSHIP (TEXTUAL)
+cities (1) -------- (many) weather_data
+pipeline_logs is independent
+
+6. FUTURE EXTENSIONS
+- Add users table for access control
+- Add alerts table for threshold breaches
+- Index timestamp column for faster queries
